@@ -68,14 +68,14 @@ header('Refresh: 0; URL=./lastrecepit.php');
 			<div class="form-group">
                             <label for="task-name" class="col-sm-3 control-label">Amount </label>
                             <div class="col-sm-6">
-                                <input type="text" name="amount" id="task-name" class="form-control" >
+                                <input type="text" name="amount" id="task-name" class="form-control" required>
                             </div>
                         </div>
 			
 			<div class="form-group">
                             <label for="task-name" class="col-sm-3 control-label">Amount In Letters</label>
                             <div class="col-sm-6">
-                                <textarea  name="amountletters" id="task-name" class="form-control" ></textarea>
+                                <textarea  name="amountletters" id="task-name" class="form-control" required></textarea>
                             </div>
                         </div>
 
@@ -83,7 +83,7 @@ header('Refresh: 0; URL=./lastrecepit.php');
     <div class="form-group">
                             <label for="task-name" class="col-sm-3 control-label">Notes</label>
                             <div class="col-sm-6">
-                                <textarea  name="notes" id="task-name" class="form-control" value="{{ old('note') }}"></textarea>
+                                <textarea  name="notes" id="task-name" class="form-control" value="{{ old('note') }}" required></textarea>
                             </div>
                         </div>
 
@@ -100,7 +100,7 @@ header('Refresh: 0; URL=./lastrecepit.php');
                             <label class="col-md-3 control-label" >Date </label>
 
                             <div class="col-md-6" >
-                           <input  type="text" name="date" class="form-control" id="datepicker">
+                           <input  type="text" name="date" class="form-control" id="datepicker" required>
 
 
 

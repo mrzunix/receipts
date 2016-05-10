@@ -103,7 +103,7 @@ echo"</td>";
 echo "<td> <form action='updaterecepit.php' method='POST'> 
 <input type='hidden' name='id' value=" . $row['id'] . ">
 <button type='submit'  name='btn-delete' class='btn btn-info'>
-<i class='fa fa-btn fa-tag'></i>Edit
+<i class='fa fa-btn fa-edit'></i>Edit
                                                 </button></form></td>";
 
 

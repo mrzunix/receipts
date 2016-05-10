@@ -120,6 +120,7 @@ $userRow=mysql_fetch_array($res);
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+				<li><a href="./reset.php"><i class="fa fa-btn fa-edit"></i>Change Password</a></li>
                                 <li><a href="./login/logout.php?logout"><i class="fa fa-btn fa-sign-out"></i>Logout </a></li>
                             </ul>
                         </li>
