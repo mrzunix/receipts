@@ -1,0 +1,95 @@
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Amiri&subset=arabic,latin);
+
+@font-face{
+font-family:outline;
+src: url(SnackerComic_PerosnalUseOnly.ttf);
+}
+
+@font-face{
+font-family:arabic;
+src: url(arabic.ttf);
+}
+
+*
+{
+	margin:0;
+	padding:0;
+}
+#login-form
+{
+	margin-top:70px;
+}
+
+/* css for home page  */
+
+*
+{
+	margin:0;
+	padding:0;
+}
+#header
+{
+	width:100%;
+	height:60px;
+background-color: rgb(0, 0, 0);
+	color:#9fa8b0;
+	font-family:Garamond;
+}
+#header #left
+{
+	float:left;
+	position:relative;
+}
+#header #left a
+{
+	position:relative;
+	top:13px;
+	left:100px;
+	font-size:50px;
+	font-family: outline ;
+	color:#F7F7F7;
+	text-shadow: rgb(0, 0, 0) -2px 6px 0px;
+	text-decoration:none;
+}
+
+#header #left a:hover
+{
+position:relative;
+        top:13px;
+        left:100px;
+        font-size:50px;
+        font-family: outline ;
+        color:#BE0000;
+        text-shadow: rgb(0, 0, 0) -2px 6px 0px;
+        text-decoration:none;
+}
+
+
+#header #right
+{
+	float:right;
+	position:relative;
+}
+#header #right #content
+{
+	position:relative;
+	top:20px;
+	right:100px;
+	color:#fff;
+}
+#header #right #content a
+{
+	color:#00a2d1;
+}
+
+
+#body
+{
+	text-align:center;
+	margin-top:10px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+}
+
+/* css for home page */
