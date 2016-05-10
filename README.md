@@ -1,1 +1,1 @@
-# receipts
+# README
