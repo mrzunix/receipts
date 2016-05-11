@@ -70,8 +70,9 @@ $userRow=mysql_fetch_array($res);
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="#">
-                 PhoenixEgypt   
+                <a class="navbar-brand fa fa-btn fa-home" class=" " href="./home.php">
+                 PhoenixEgypt  
+
                 </a>
             </div>
 
