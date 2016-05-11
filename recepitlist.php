@@ -100,11 +100,7 @@ echo 'Cheque';
 echo"</td>";
   echo "<td class='table-text'>" . $row['date'] . "</td>";
 
-echo "<td> <form action='updaterecepit.php' method='POST'> 
-<input type='hidden' name='id' value=" . $row['id'] . ">
-<button type='submit'  name='btn-delete' class='btn btn-info'>
-<i class='fa fa-btn fa-edit'></i>Edit
-                                                </button></form></td>";
+
 
 
   echo "<td class='table-text'>
@@ -114,6 +110,11 @@ echo "<td> <form action='updaterecepit.php' method='POST'>
 <i class='fa fa-btn fa-tag'></i>View
                                                 </button>
 </form></td>";
+echo "<td> <form action='updaterecepit.php' method='GET'> 
+<input type='hidden' name='id' value=" . $row['id'] . ">
+<button type='submit' class='btn btn-info'>
+<i class='fa fa-btn fa-edit'></i>Edit
+                                                </button></form></td>";
 
 
 echo "<td> <form  method='POST'> 

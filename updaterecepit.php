@@ -46,7 +46,7 @@ echo "";
 <form method="POST" class="form-horizontal">
 <?php
 require('include/dbi.php');
-$id = $_POST['id'];
+$id = $_GET['id'];
 $result = mysqli_query($con,"select * from recepits where id = $id");
 
 while($row = mysqli_fetch_array($result))
