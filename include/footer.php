@@ -9,6 +9,11 @@
     $( "#datepicker" ).datepicker({ dateFormat: "yy-mm-dd" });
 
   });
+
+$( "#button" ).button();
+$( "#radioset" ).buttonset();
+
+
   </script>
  
 </body>

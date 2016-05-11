@@ -97,7 +97,7 @@ header('Refresh: 0; URL=./lastrecepit.php');
                         </div>
 
                   <div class="form-group">
-                            <label class="col-md-3 control-label" >Date </label>
+                            <label class="col-md-3 control-label " >Date </label>
 
                             <div class="col-md-6" >
                            <input  type="text" name="date" class="form-control" id="datepicker" required>
@@ -110,12 +110,15 @@ header('Refresh: 0; URL=./lastrecepit.php');
 
 
 
-                        <div class="form-group">
+                        <div id="radioset" class="form-group">
                             <label class="col-md-3 control-label">Payment Method</label>
                             <div class="col-md-6">
 
-                                <input type="radio" name="type" value="1"> Cash
-                                <input type="radio"  name="type" value="0" checked="checked">Cheque
+                                <input id="radio1" type="radio" name="type" value="1"><label for="radio1"> Cash</label>
+                                <input id="radio2"type="radio"  name="type" value="0" checked="checked"><label for="radio2">Cheque</label>
+
+
+
 
                             </div>
                         </div>

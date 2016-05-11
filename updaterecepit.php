@@ -104,17 +104,17 @@ while($row = mysqli_fetch_array($result))
 
 
 
-                        <div class="form-group">
+                        <div id="radioset" class="form-group">
                             <label class="col-md-3 control-label">Payment Method</label>
                             <div class="col-md-6">
 <?php
 if(  $row['type']   == 1)
 {
-echo"<input type='radio' name='type' value='1' checked='checked'> Cash <input type='radio'  name='type' value='0' >Cheque";
+echo"<input id='radio1' type='radio' name='type' value='1' checked='checked'><label for='radio1'> Cash </label><input id='radio2' type='radio'  name='type' value='0' ><label for='radio2'>Cheque</label";
 }
 else
 {
-echo "<input type='radio' name='type' value='1'> Cash <input type='radio'  name='type' value='0' checked='checked'>Cheque";
+echo"<input id='radio1' type='radio' name='type' value='1' ><label for='radio1'> Cash </label><input id='radio2' type='radio'  name='type' value='0' checked='checked' ><label for='radio2'>Cheque</label";
 }
 ?>
                                 
