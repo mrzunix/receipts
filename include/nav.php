@@ -95,7 +95,14 @@ $userRow=mysql_fetch_array($res);
 </li>
 
  <li><a href="./customers.php">Customers</a></li>
- <li><a href="./cards.php">Sangoma Analog Cards</a></li>
+
+
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products</a>
+                        <ul class="dropdown-menu" role="menu">
+                                <li><a href="./cards.php"><i class="fa fa-btn fa-object-ungroup"></i>Sangoma Analog Card</a></li>
+                                <li><a href="#"><i class="fa fa-btn fa-phone"></i>GrandStream Phones</a></li>
+                            </ul>
+</li>
 
                     <li><a href="#" class="dropdown-toggles" data-toggle="dropdown" role="button" aria-expanded="false">Settings</a>
                         <ul class="dropdown-menu" role="menu">
