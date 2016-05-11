@@ -25,19 +25,18 @@ $userRow=mysql_fetch_array($res);
     <title>PhoenixEgypt Internal Portal</title>
 
     <!-- Fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css" rel="stylesheet" type="text/css" />
+    <link href="./css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="./css/fonts.css" rel='stylesheet' type='text/css'>
+    <link href="./css/droidarabicnaskh.css" rel="stylesheet" type="text/css" />
 
     <!-- Styles -->
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link href="./css/bootstrap.min.css" rel="stylesheet">
 
 
     <!--- <link href="http://www.task.local/css/bootstrap.min.css" rel="stylesheet">--->
 
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="./css/jquery-ui.css">
 
 
 
