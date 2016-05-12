@@ -23,6 +23,7 @@ $newpassword = md5(mysql_real_escape_string($_POST['password1']));
 			if(mysql_query("update  users set firstname = '$firstname' , lastname = '$lastname'  , email = '$email' , password = '$newpassword' where user_id = '$id'"))
 			{
 	echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> User Information Has Been Updated Successfully  </center>";
+	echo "<meta http-equiv='refresh' content='1; URL=./users.php' />";
 
 			}
 			else

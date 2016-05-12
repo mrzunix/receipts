@@ -1,7 +1,7 @@
 <?php
-
-require('include/config.php');
 require('include/nav.php');
+require('include/config.php');
+
 
 if(isset($_POST['btn-delete']))
 {
@@ -154,3 +154,4 @@ echo "<td>
 
         </div>
     </div>
+<?php require('include/footer.php');?>
