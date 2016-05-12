@@ -99,14 +99,15 @@ $userRow=mysql_fetch_array($res);
 
                     <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products</a>
                         <ul class="dropdown-menu" role="menu">
-                                <li><a href="./cards.php"><i class="fa fa-btn fa-object-ungroup"></i>Sangoma Analog Card</a></li>
-                                <li><a href="#"><i class="fa fa-btn fa-phone"></i>GrandStream Phones</a></li>
+                                <li><a href="./cards.php"><i class="fa fa-btn fa-search"></i>Sangoma Analog Card</a></li>
+                               <!---  <li><a href="#"><i class="fa fa-btn fa-phone"></i>GrandStream Phones</a></li> --->
                             </ul>
 </li>
 
                     <li><a href="#" class="dropdown-toggles" data-toggle="dropdown" role="button" aria-expanded="false">Settings</a>
                         <ul class="dropdown-menu" role="menu">
                                 <li><a href="./users.php"><i class="fa fa-btn fa-user"></i>Users</a></li>
+                                <li><a href="./backup.php"><i class="fa fa-btn fa-save"></i>Backups</a></li>
 
                             </ul>
 </li>
