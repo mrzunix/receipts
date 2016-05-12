@@ -22,8 +22,8 @@ $newpassword = md5(mysql_real_escape_string($_POST['password1']));
 
 			if(mysql_query("update  users set firstname = '$firstname' , lastname = '$lastname'  , email = '$email' , password = '$newpassword' where user_id = '$id'"))
 			{
-	echo "<center><p style='color:Green'> User Information Has Been Updated Successfully  </center>";
-header('Refresh: 1; URL=./users.php');
+	echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> User Information Has Been Updated Successfully  </center>";
+
 			}
 			else
 			{?>
@@ -33,7 +33,7 @@ header('Refresh: 1; URL=./users.php');
 	}
 	else 
 	{
-	echo "<center><p style='color:red'> Password  Doesn't Matched </center>";
+	echo "<center><p class='fa fa-btn fa-warning' style='color:red'> Password  Doesn't Matched </center>";
 	}
 
 

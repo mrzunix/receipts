@@ -19,12 +19,13 @@ $id = mysql_real_escape_string($_POST['id']);
 if(mysql_query("update recepits set   amount = '$amount' , amountletters = '$amountletters' , note = '$notes' , bank = '$bank' ,date = '$date' , type = $type  where id = '$id'"))
 	{
 	
-header('Refresh: 0; URL=./recepitlist.php');
+	echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> Receipt Has Been Updated Successfully  </center>";
+	echo "<meta http-equiv='refresh' content='0; URL=./recepitdetails.php?id=$id' />";
 
 	}
 	else
 	{
-echo "";
+	echo "<center><p class='fa fa-btn fa-warning' style='color:red'> Cannot Update Receipt </center>";
 		?>
 
         <script>alert('Failed To add New Recepit');</script>

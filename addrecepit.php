@@ -21,9 +21,16 @@ if(mysql_query("INSERT INTO recepits (customer, amount, amountletters, type, not
 VALUES
 ('$customer', '$amount', '$amountletters', '$type', '$notes', '$date', '$bank')"))
 	{
-header('Refresh: 0; URL=./lastrecepit.php');
-	
 
+require('include/dbi.php');
+$result = mysqli_query($con,"select id from recepits order by id desc limit 1");
+while($row = mysqli_fetch_array($result))
+  {
+$receiptid = $row['id'];
+
+
+	echo "<meta http-equiv='refresh' content='0; URL=./recepitdetails.php?id=$receiptid' />";
+}
 	}
 	else
 	{

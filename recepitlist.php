@@ -13,7 +13,7 @@ if(isset($_POST['btn-delete']))
 if(mysql_query("delete from recepits where id = '$id' "))
 	{
 	
-header('Refresh: 0; URL=./recepitlist.php');
+	echo "<meta http-equiv='refresh' content='0; URL=./recepitlist.php' />";
 	}
 	else
 	{
@@ -104,9 +104,9 @@ echo"</td>";
 
 
   echo "<td class='table-text'>
-<form action='recepitdetails.php' method='POST'> 
+<form action='recepitdetails.php' method='Get'> 
 <input type='hidden' name='id' value=" . $row['id'] .">
-<button type='submit'  name='btn-delete' class='btn btn-primary'>
+<button type='submit'  class='btn btn-primary'>
 <i class='fa fa-btn fa-tag'></i>View
                                                 </button>
 </form></td>";

@@ -13,7 +13,8 @@ if(isset($_POST['btn-delete']))
 if(mysql_query("delete from users where user_id = '$id' "))
 	{
 	
-header('Refresh: 0; URL=./users.php');
+echo "<meta http-equiv='refresh' content='0; URL=./users.php' />";
+
 	}
 	else
 	{
@@ -155,7 +156,7 @@ $num_rows = mysql_num_rows($result);
 
 
 
-if(  $num_rows  < 2)
+if(  $num_rows  < 1)
 {
 echo '<p style="color:darkred;">No Customer Founded</p>';
 }

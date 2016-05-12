@@ -13,7 +13,8 @@ if(isset($_POST['btn-delete']))
 if(mysql_query("delete from customers where id = '$id' "))
 	{
 	
-header('Refresh: 0; URL=./customers.php');
+
+echo "<meta http-equiv='refresh' content='0; URL=./customers.php' />";
 	}
 	else
 	{
