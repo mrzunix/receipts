@@ -59,7 +59,7 @@ else
                     <div class="panel-body">
                         <table class="table table-striped task-table" style="font-family: 'Droid Arabic Naskh', 'Monda', sans-serif;">
                             <thead>
-				<th>no</th>
+				<th>No</th>
                                 <th>Customer</th>
                                 <th>Amount</th>
 				<th>Payment Method</th>

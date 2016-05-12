@@ -45,7 +45,8 @@ $newpassword = md5(mysql_real_escape_string($_POST['password1']));
 
 			if(mysql_query("INSERT INTO users(firstname,lastname,username,email,password) VALUES('$firstname','$lastname','$username','$email','$newpassword')"))
 			{
-			echo "<center><p style='color:green'>User has been created</center>";
+
+			echo "<center><p   class='fa fa-btn fa-info-circle' style='color:green'>User has been created</center>";
 			}
 			else
 			{?>
@@ -55,7 +56,7 @@ $newpassword = md5(mysql_real_escape_string($_POST['password1']));
 	}
 	else 
 	{
-	echo "<center><p style='color:red'> Password  Doesn't Matched </center>";
+	echo "<center><p class='fa fa-btn fa-warning' style='color:red'> Password  Doesn't Matched </center>";
 	}
 
 }
@@ -190,10 +191,12 @@ $result = mysqli_query($con,"select * from users ");
  
                         
 <?php
+$num_rows = 1;
 while($row = mysqli_fetch_array($result))
   {
+
   echo "<tr >";
-  echo "<td class='table-text'>" . $row['user_id'] . "</td>";
+  echo "<td class='table-text'>" .   $num_rows++ . "</td>";
   echo "<td class='table-text'>" . $row['firstname'] . "</td>";
   echo "<td class='table-text'>" . $row['lastname'] . "</td>";
   echo "<td class='table-text'>" . $row['username'] . "</td>";

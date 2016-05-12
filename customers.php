@@ -132,10 +132,13 @@ $result = mysqli_query($con,"select * from customers where id > 1");
  
                         
 <?php
+$num_rows = 1;
 while($row = mysqli_fetch_array($result))
+
+
   {
   echo "<tr >";
-  echo "<td class='table-text'>" . $row['id'] . "</td>";
+  echo "<td class='table-text'>" .   $num_rows++ . "</td>";
   echo "<td class='table-text'>" . $row['customer'] . "</td>";
 echo "<td> <form  method='POST'> 
 <input type='hidden' name='id' value=" . $row['id'] . ">

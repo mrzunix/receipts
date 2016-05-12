@@ -73,7 +73,7 @@ else
                     <div class="panel-body">
                         <table class="table table-striped task-table" style="font-family: 'Droid Arabic Naskh', 'Monda', sans-serif;">
                             <thead>
-
+				<th>No</th>
 				<th>Code</th>
                                 <th>Description</th>
                                 <th>fxo</th>
@@ -85,6 +85,7 @@ else
                             </thead>
                             <tbody>
 <?php
+$num_rows = 1;
 while($row = mysqli_fetch_array($result))
 
 
@@ -92,6 +93,7 @@ while($row = mysqli_fetch_array($result))
   {
 
   echo "<tr >";
+  echo "<td class='table-text'>" .   $num_rows++ . "</td>";
   echo "<td class='table-text'>" . $row['Code'] . "</td>";
  echo  "<td class='table-text'>" . $row['B'] . "</td>";
   echo "<td class='table-text'>" . $row['fxo'] . "</td>";
