@@ -15,13 +15,12 @@ if(mysql_query("delete from backups where id = '$id' "))
 	system("rm -rf backups/$file");
 
 echo "<meta http-equiv='refresh' content='0; URL=./backup.php' />";
+echo "<center><p   class='fa fa-btn fa-info-circle' style='color:green'> Backup Has been Deleted Successfully</center>";
 
 	}
 	else
 	{
-		?>
-        <script>alert('User Can not Be Removed ');</script>
-        <?php
+echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Cannot Delete Backup </center>";
 	}
 }
 
@@ -40,10 +39,7 @@ echo "<center><p   class='fa fa-btn fa-info-circle' style='color:green'> Backup 
 	}
 	else
 	{
-	echo "<center><p class='fa fa-btn fa-warning' style='color:red'>error Couldn't Complete backup </center>";
-		?>
-        <script>alert('Failed To Backup');</script>
-        <?php
+	echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'>Error Couldn't Complete backup </center>";
 	}
 }
 

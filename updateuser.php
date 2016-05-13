@@ -27,14 +27,14 @@ $newpassword = md5(mysql_real_escape_string($_POST['password1']));
 
 			}
 			else
-			{?>
-       			 <script>alert('Failed To add Update User Info');</script>
-       			 <?php
+			{
+	echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'>Failed To  Update User Info</center>";
+
 			}
 	}
 	else 
 	{
-	echo "<center><p class='fa fa-btn fa-warning' style='color:red'> Password  Doesn't Matched </center>";
+	echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Password  Doesn't Matched </center>";
 	}
 
 

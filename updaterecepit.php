@@ -25,11 +25,8 @@ if(mysql_query("update recepits set   amount = '$amount' , amountletters = '$amo
 	}
 	else
 	{
-	echo "<center><p class='fa fa-btn fa-warning' style='color:red'> Cannot Update Receipt </center>";
-		?>
+	echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Cannot Update Receipt </center>";
 
-        <script>alert('Failed To add New Recepit');</script>
-        <?php
 	}
 }
 

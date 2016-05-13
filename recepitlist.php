@@ -12,14 +12,13 @@ if(isset($_POST['btn-delete']))
 
 if(mysql_query("delete from recepits where id = '$id' "))
 	{
-	
+
+  echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> Receipt Has Been Deleted Successfully  </center>";
 	echo "<meta http-equiv='refresh' content='0; URL=./recepitlist.php' />";
 	}
 	else
 	{
-		?>
-        <script>alert('Recepit Can not Be Removed ');</script>
-        <?php
+	echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Cannot Delete The Receipt </center>";
 	}
 }
 ?>

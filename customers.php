@@ -13,14 +13,12 @@ if(isset($_POST['btn-delete']))
 if(mysql_query("delete from customers where id = '$id' "))
 	{
 	
-
+echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> Customer Has Been Deleted Successfully  </center>";
 echo "<meta http-equiv='refresh' content='0; URL=./customers.php' />";
 	}
 	else
 	{
-		?>
-        <script>alert('customer Can not Be Removed ');</script>
-        <?php
+echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Cannot Delete Customer </center>";
 	}
 }
 
@@ -36,13 +34,12 @@ if(isset($_POST['btn-addcustomer']))
 if(mysql_query("INSERT INTO customers (customer ) VALUES ('$customer')"))
 	{
 	
+echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> New Customer Has Been Created Successfully  </center>";
 
 	}
 	else
 	{
-		?>
-        <script>alert('Failed To add New Customer');</script>
-        <?php
+echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Cannot Create Customer </center>";
 	}
 }
 

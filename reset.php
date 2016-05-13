@@ -18,17 +18,19 @@ $newpassword = md5(mysql_real_escape_string($_POST['password1']));
 
 			if(mysql_query("update users set   password = '$newpassword'  where user_id = '$id'"))
 			{
-			echo "<center><p style='color:green'>Your Password Has Been Updated</center>";
+			echo "<center><p  class='fa fa-btn fa-info-circle' style='color:green'>Your Password Has Been Updated .. Please Relogin Again</center>";
+	                echo "<meta http-equiv='refresh' content='1; URL=./login/logout.php?logout' />";
 			}
 			else
-			{?>
-       			 <script>alert('Failed To add New Recepit');</script>
-       			 <?php
+			{
+
+	echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'>Couldn't Update Your Password</center>";
+
 			}
 	}
 	else 
 	{
-	echo "<center><p style='color:red'>Your New Password  Doesn't Matched </center>";
+	echo "<center><p  class='fa fa-btn fa-warning' style='color:darkred'>Your New Password  Doesn't Matched </center>";
 	}
 }
 

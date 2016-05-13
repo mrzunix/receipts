@@ -28,15 +28,13 @@ while($row = mysqli_fetch_array($result))
   {
 $receiptid = $row['id'];
 
-
+echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> New Receipt Has Been Created Successfully  </center>";
 	echo "<meta http-equiv='refresh' content='0; URL=./recepitdetails.php?id=$receiptid' />";
 }
 	}
 	else
 	{
-		?>
-        <script>alert('Failed To add New Recepit');</script>
-        <?php
+echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Cannot Create  New Receipt  </center>";
 	}
 }
 
@@ -56,7 +54,7 @@ $receiptid = $row['id'];
 				<div class="form-group">
                             <label for="task-name" class="col-sm-3 control-label">Customer</label>
                             <div class="col-sm-6">
-				<select name="customer" id="task-name" class="form-control">
+				<select name="customer" id="task-name" class="form-control" >
 						<?php
 						    require('include/db.php');
   						   $strSQL = "SELECT customer FROM customers ";

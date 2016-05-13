@@ -88,9 +88,9 @@ if(isset($_POST['btn-login']))
 	}
 	else
 	{
-		?>
-        <script>alert('Invalid Username Or Password');</script>
-        <?php
+	
+	echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Invalid Username Or Password </center>";
+
 	}
 	
 }
@@ -98,7 +98,7 @@ if(isset($_POST['btn-login']))
 
 
 
-<div style="margin-top:5%" class="container">
+<div style="margin-top:2%" class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">

@@ -18,9 +18,9 @@ echo "<meta http-equiv='refresh' content='0; URL=./users.php' />";
 	}
 	else
 	{
-		?>
-        <script>alert('User Can not Be Removed ');</script>
-        <?php
+
+echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'>Error .. User Couldn't Be Deleted</center>";
+
 	}
 }
 
@@ -49,14 +49,13 @@ $newpassword = md5(mysql_real_escape_string($_POST['password1']));
 			echo "<center><p   class='fa fa-btn fa-info-circle' style='color:green'>User has been created</center>";
 			}
 			else
-			{?>
-       			 <script>alert('Failed To add New user');</script>
-       			 <?php
+			{	
+echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Failed To add New User</center>";
 			}
 	}
 	else 
 	{
-	echo "<center><p class='fa fa-btn fa-warning' style='color:red'> Password  Doesn't Matched </center>";
+	echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Password  Doesn't Matched </center>";
 	}
 
 }
