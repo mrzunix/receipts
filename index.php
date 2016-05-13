@@ -2,6 +2,13 @@
 
 session_start();
 
+include_once './login/dbconnect.php';
+
+if(isset($_SESSION['user'])!="")
+{
+	header("Location: ./home.php");
+}
+
 ?>
 <html lang="en">
 <head>
