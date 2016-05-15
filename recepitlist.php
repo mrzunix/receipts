@@ -84,8 +84,8 @@ while($row = mysqli_fetch_array($result))
   echo "<tr >";
 
 
- echo "<td class='table-text'>" . $row['id'] . "</td>";
- echo "<td class='table-text'>" . $row['customer'] . "</td>";
+ echo "<td class='table-text'><a href='./recepitdetails.php?id=" . $row['id'] . "'>" . $row['id'] . "</td>";
+ echo "<td class='table-text'><a href='./recepitdetails.php?id=" . $row['id'] . "'>" . $row['customer'] . "</td>";
   echo "<td class='table-text'>" . $row['amount'] . "</td>";
   echo "<td class='table-text'>";
 if(  $row['type']   == 1)
