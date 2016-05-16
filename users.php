@@ -125,8 +125,8 @@ echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Failed To a
 
 <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
-                                <button type="submit" name="btn-adduser" class="btn btn-default">
-                                    <i class="fa fa-btn fa-plus"></i>Add Users
+                                <button type="submit" name="btn-adduser" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i>Add Users
                                 </button>
                             </div>
                         </div>

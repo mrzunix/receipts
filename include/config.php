@@ -3,7 +3,7 @@
 // Database Host
 $dbhost = "localhost";
 // Database Name
-$database = "rec";
+$database = "receipts";
 // Database Username
 $dbuser = "root";
 // Database Password
