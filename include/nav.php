@@ -94,6 +94,22 @@ $userRow=mysql_fetch_array($res);
                             </ul>
 </li>
 
+                 <li><a href="#" class="dropdown-toggles" data-toggle="dropdown" role="button" aria-expanded="false">Depoits</a>
+                        <ul class="dropdown-menu" role="menu">
+                                <li><a href="./cashdeposit.php"><i class="fa fa-btn fa-money"></i>Cash Deposit</a></li>
+                                <li><a href="./bankddeposit.php"><i class="fa fa-btn fa-credit-card"></i>Bank Deposit </a></li>
+
+                            </ul>
+</li>
+
+                <li><a href="#" class="dropdown-toggles" data-toggle="dropdown" role="button" aria-expanded="false">Withdraw</a>
+                        <ul class="dropdown-menu" role="menu">
+                                <li><a href="./cashwithdraw.php"><i class="fa fa-btn fa-money"></i>Cash withdraw</a></li>
+                                <li><a href="./bankwithdraw.php"><i class="fa fa-btn fa-credit-card"></i>Bank withdraw </a></li>
+
+                            </ul>
+</li>
+
  <li><a href="./customers.php">Customers</a></li>
 
 
@@ -111,6 +127,10 @@ $userRow=mysql_fetch_array($res);
 
                             </ul>
 </li>
+
+
+
+
 
 </ul>
 
