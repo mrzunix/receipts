@@ -75,7 +75,7 @@ while($row = mysqli_fetch_array($result))
 
 
     <div class="form-group">
-                            <label for="task-name" class="col-sm-3 control-label">Notes</label>
+                            <label for="task-name" class="col-sm-3 control-label">For</label>
                             <div class="col-sm-6">
                                 <textarea  name="notes" id="task-name" class="form-control" ><?php echo "" . $row['note'] . "";?></textarea>
                             </div>

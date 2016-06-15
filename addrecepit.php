@@ -86,7 +86,7 @@ echo "<center><p class='fa fa-btn fa-warning' style='color:darkred'> Cannot Crea
 
 
     <div class="form-group">
-                            <label for="task-name" class="col-sm-3 control-label">Notes</label>
+                            <label for="task-name" class="col-sm-3 control-label">For</label>
                             <div class="col-sm-6">
                                 <textarea  name="notes" id="task-name" class="form-control" value="{{ old('note') }}" required></textarea>
                             </div>
