@@ -30,20 +30,61 @@ if(mysql_query("delete from transactions where id = '$id' "))
 <center>
 <table border="0" width="90%">
 
+<!----- Get data ----------->
+<?php require('include/db.php');
+$result = mysql_query("SELECT sum(amount) as totaldeposit FROM transactions where type = 'Deposit'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totaldeposit = mysql_real_escape_string($row['totaldeposit']);
+}
+
+$result = mysql_query("SELECT sum(amount) as totalcashdeposit FROM transactions where type = 'Deposit' AND method='Cash'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totalcashdeposit = mysql_real_escape_string($row['totalcashdeposit']);
+}
+
+$result = mysql_query("SELECT sum(amount) as totalbankdeposit FROM transactions where type = 'Deposit' AND method='Bank'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totalbankdeposit = mysql_real_escape_string($row['totalbankdeposit']);
+}
+
+
+$result = mysql_query("SELECT sum(amount) as totalwithdraw FROM transactions where type = 'Withdraw'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totalwithdraw = mysql_real_escape_string($row['totalwithdraw']);
+}
+
+
+$result = mysql_query("SELECT sum(amount) as totalcashwithdraw FROM transactions where type = 'Withdraw' AND method='Cash'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totalcashwithdraw = mysql_real_escape_string($row['totalcashwithdraw']);
+}
+
+$result = mysql_query("SELECT sum(amount) as totalbankwithdraw FROM transactions where type = 'Withdraw' AND method='Bank'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totalbankwithdraw = mysql_real_escape_string($row['totalbankwithdraw']) ;
+}
+
+
+$totalbalance = $totaldeposit - $totalwithdraw;
+$bankbalance = $totalbankdeposit - $totalbankwithdraw ;
+$cashbalance = $totalcashdeposit - $totalcashwithdraw
+
+?>
+<!------------------>
+
 
 <tr>
 <td>
 <div class="btn btn-default ">
 <p>Total Deposits Transactions</p>
 <p style="font-weight:bold;font-size:18px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as total FROM transactions where type = 'Deposit'", $db);
-while($row = mysql_fetch_array($result))
-  {
-echo   $row['total'] ; echo '&nbsp; L.E' ;
-}
-?>
+<?php echo   " $totaldeposit &nbsp; L.E" ; ?>
 </p>
 <hr>
 <table align="center"  width="250px">
@@ -51,27 +92,13 @@ echo   $row['total'] ; echo '&nbsp; L.E' ;
 <td>
 <p>Bank Deposit</p>
 <p style="font-weight:bold;font-size:16px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as banktotal FROM transactions where type = 'Deposit' and method='Bank'", $db);
-while($row = mysql_fetch_array($result))
-  {
-echo   $row['banktotal'] ; echo '&nbsp; L.E' ;
-}
-?>
+<?php echo   " $totalbankdeposit &nbsp; L.E" ; ?>
 </td>
 
 <td>
 <p>Cash Deposit</p>
 <p style="font-weight:bold;font-size:16px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as cashtotal FROM transactions where type = 'Deposit' and method='Cash'", $db);
-while($row = mysql_fetch_array($result))
-  {
-echo   $row['cashtotal'] ; echo '&nbsp; L.E' ;
-}
-?>
+<?php echo   " $totalcashdeposit &nbsp; L.E" ; ?>
 </td>
 </tr>
 </table>
@@ -79,32 +106,12 @@ echo   $row['cashtotal'] ; echo '&nbsp; L.E' ;
 </div>
 </td>
 
-<!----------Cureent ---->
+<!----------Cureent Balance ---->
 <td>
 <div class="btn btn-primary ">
 <p>Current Balance </p>
 <p style="font-weight:bold;font-size:18px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as dtotal FROM transactions where type = 'Deposit'", $db);
-while($row = mysql_fetch_array($result))
-  {
-
-$dtotal = mysql_real_escape_string($row['dtotal']);
-}
-
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as wtotal FROM transactions where type = 'Withdraw'", $db);
-while($row = mysql_fetch_array($result))
-  {
-
-$wtotal = mysql_real_escape_string($row['wtotal']);
-}
-
-
-$total = $dtotal - $wtotal;
-echo $total;echo '&nbsp; L.E'
-?>
+<?php echo   " $totalbalance &nbsp; L.E" ; ?>
 </p>
 <hr>
 <table align="center"  width="300px">
@@ -112,57 +119,18 @@ echo $total;echo '&nbsp; L.E'
 <td>
 <p>Bank Balance</p>
 <p style="font-weight:bold;font-size:16px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as bankdtotal FROM transactions where type = 'Deposit' and method='Bank'", $db);
-while($row = mysql_fetch_array($result))
-  {
-$bankdtotal = mysql_real_escape_string($row['bankdtotal']);
-}
-
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as bankwtotal FROM transactions where type = 'Withdraw' and method='Bank'", $db);
-while($row = mysql_fetch_array($result))
-{
-$bankwtotal = mysql_real_escape_string($row['bankwtotal']);
-}
-
-$banktotal = $bankdtotal - $bankwtotal;
-echo $banktotal;echo '&nbsp; L.E'
-?>
+<?php echo   " $bankbalance &nbsp; L.E" ; ?>
 </td>
 <td>
 <p>Cash Balance</p>
 <p style="font-weight:bold;font-size:16px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as cashdtotal FROM transactions where type = 'Deposit' and method='Cash'", $db);
-while($row = mysql_fetch_array($result))
-  {
-$cashdtotal = mysql_real_escape_string($row['cashdtotal']);
-}
-
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as cashwtotal FROM transactions where type = 'Withdraw' and method='Cash'", $db);
-while($row = mysql_fetch_array($result))
-{
-$cashwtotal = mysql_real_escape_string($row['cashwtotal']);
-}
-
-
-$cashtotal = $cashdtotal -  $cashwtotal;
-echo $cashtotal;echo '&nbsp; L.E'
-?>
+<?php echo   " $cashbalance &nbsp; L.E" ; ?>
 </td>
 </tr>
 </table>
 
 </div>
 </td>
-
-
-
-
 <!---------- End ---------->
 
 
@@ -175,41 +143,20 @@ echo $cashtotal;echo '&nbsp; L.E'
 <div class="btn btn-default ">
 <p>Total Withdraw Transactions</p>
 <p style="font-weight:bold;font-size:18px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as total FROM transactions where type = 'Withdraw'", $db);
-while($row = mysql_fetch_array($result))
-  {
-echo   $row['total'] ; echo '&nbsp; L.E' ;
-}
-?>
+<?php echo   " $totalwithdraw &nbsp; L.E" ; ?>
 </p>
 <hr>
 <table align="center"  width="250px">
 <tr>
 <td>
-<p>Bank Deposit</p>
+<p>Bank Withdraw</p>
 <p style="font-weight:bold;font-size:16px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as banktotal FROM transactions where type = 'Withdraw' and method='Bank'", $db);
-while($row = mysql_fetch_array($result))
-  {
-echo   $row['banktotal'] ; echo '&nbsp; L.E' ;
-}
-?>
+<?php echo   " $totalbankwithdraw &nbsp; L.E" ; ?>
 </td>
 <td>
-<p>Cash Deposit</p>
+<p>Cash Withdraw</p>
 <p style="font-weight:bold;font-size:16px">
-<?php
-include_once './include/db.php';
-$result = mysql_query("SELECT sum(amount) as cashtotal FROM transactions where type = 'Withdraw' and method='Cash'", $db);
-while($row = mysql_fetch_array($result))
-  {
-echo   $row['cashtotal'] ; echo '&nbsp; L.E' ;
-}
-?>
+<?php echo   " $totalcashwithdraw &nbsp; L.E" ; ?>
 </td>
 </tr>
 </table>
