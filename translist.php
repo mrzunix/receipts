@@ -28,7 +28,9 @@ if(mysql_query("delete from transactions where id = '$id' "))
 
 
 <center>
-<table border="0" width="70%">
+<table border="0" width="90%">
+
+
 <tr>
 <td>
 <div class="btn btn-default ">
@@ -58,6 +60,7 @@ echo   $row['banktotal'] ; echo '&nbsp; L.E' ;
 }
 ?>
 </td>
+
 <td>
 <p>Cash Deposit</p>
 <p style="font-weight:bold;font-size:16px">
@@ -75,6 +78,96 @@ echo   $row['cashtotal'] ; echo '&nbsp; L.E' ;
 
 </div>
 </td>
+
+<!----------Cureent ---->
+<td>
+<div class="btn btn-primary ">
+<p>Current Balance </p>
+<p style="font-weight:bold;font-size:18px">
+<?php
+include_once './include/db.php';
+$result = mysql_query("SELECT sum(amount) as dtotal FROM transactions where type = 'Deposit'", $db);
+while($row = mysql_fetch_array($result))
+  {
+
+$dtotal = mysql_real_escape_string($row['dtotal']);
+}
+
+include_once './include/db.php';
+$result = mysql_query("SELECT sum(amount) as wtotal FROM transactions where type = 'Withdraw'", $db);
+while($row = mysql_fetch_array($result))
+  {
+
+$wtotal = mysql_real_escape_string($row['wtotal']);
+}
+
+
+$total = $dtotal - $wtotal;
+echo $total;echo '&nbsp; L.E'
+?>
+</p>
+<hr>
+<table align="center"  width="300px">
+<tr>
+<td>
+<p>Bank Balance</p>
+<p style="font-weight:bold;font-size:16px">
+<?php
+include_once './include/db.php';
+$result = mysql_query("SELECT sum(amount) as bankdtotal FROM transactions where type = 'Deposit' and method='Bank'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$bankdtotal = mysql_real_escape_string($row['bankdtotal']);
+}
+
+include_once './include/db.php';
+$result = mysql_query("SELECT sum(amount) as bankwtotal FROM transactions where type = 'Withdraw' and method='Bank'", $db);
+while($row = mysql_fetch_array($result))
+{
+$bankwtotal = mysql_real_escape_string($row['bankwtotal']);
+}
+
+$banktotal = $bankdtotal - $bankwtotal;
+echo $banktotal;echo '&nbsp; L.E'
+?>
+</td>
+<td>
+<p>Cash Balance</p>
+<p style="font-weight:bold;font-size:16px">
+<?php
+include_once './include/db.php';
+$result = mysql_query("SELECT sum(amount) as cashdtotal FROM transactions where type = 'Deposit' and method='Cash'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$cashdtotal = mysql_real_escape_string($row['cashdtotal']);
+}
+
+include_once './include/db.php';
+$result = mysql_query("SELECT sum(amount) as cashwtotal FROM transactions where type = 'Withdraw' and method='Cash'", $db);
+while($row = mysql_fetch_array($result))
+{
+$cashwtotal = mysql_real_escape_string($row['cashwtotal']);
+}
+
+
+$cashtotal = $cashdtotal -  $cashwtotal;
+echo $cashtotal;echo '&nbsp; L.E'
+?>
+</td>
+</tr>
+</table>
+
+</div>
+</td>
+
+
+
+
+<!---------- End ---------->
+
+
+
+
 
 
 
