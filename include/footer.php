@@ -8,6 +8,20 @@
   $(function() {
     $( "#datepicker" ).datepicker({ dateFormat: "yy-mm-dd" });
 
+
+  });
+
+$( "#button" ).button();
+$( "#radioset" ).buttonset();
+
+
+  </script>
+
+  <script>
+  $(function() {
+    $( "#datepicker1" ).datepicker({ dateFormat: "yy-mm-dd" });
+
+
   });
 
 $( "#button" ).button();

@@ -166,16 +166,54 @@ $cashbalance = $totalcashdeposit - $totalcashwithdraw
 
 </tr>
 </table>
-</center>
+
 
 
 <br>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+
+                 
+
+<table width="100%"  >
+<form method="GET" action="transreasult.php" class="form-horizontal">
+<tr>
+
+<td><label for="task-name">From : </label></td>
+<td> <input  type="text" name="from"  id="datepicker"  class="form-control" required></input></td>
+<td><label for="task-name" style="margin-left:10px" > To :</label></td>
+<td> <input  type="text" name="to"   id="datepicker1"  class="form-control" required></td>
+
+<td><label style="margin-left:10px"  for="task-name" > Type</label></td>
+<td><select name="type" id="task-name" class="form-control" >
+<OPTION  VALUE="">All</OPTION>
+<OPTION  VALUE="Deposit">Deposit</OPTION>
+<OPTION  VALUE="Withdraw">Withdraw</OPTION>
+</select>
+ </td>
+
+<td><label style="margin-left:10px"  for="task-name" > Method</label></td>
+<td> <td><select name="method" id="task-name" class="form-control" >
+<OPTION  VALUE="">ALL</OPTION>
+<OPTION  VALUE="Bank">Bank</OPTION>
+<OPTION  VALUE="Cash">Cash</OPTION>
+</select></td>
+
+
+<td ><button style="margin-left:20px" type="submit"  class="btn btn-successful">
+                                    <i class="fa fa-btn fa-search"></i>Search</td>
+
+</tr>
+</form>
+</table>
+</center>
+   </div>
 <div class="container">
 
             <!-- Current Recepitss -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Current Receipts
+                       Transactions History
                     </div>
  
 

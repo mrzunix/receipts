@@ -18,7 +18,7 @@ if(mysql_query("update transactions set   amount = '$amount' , method = '$method
 	{
 	
 	echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> Receipt Has Been Updated Successfully  </center>";
-	echo "<meta http-equiv='refresh' content='0; URL=./recepitdetails.php?id=$id' />";
+	echo "<meta http-equiv='refresh' content='0; URL=./translist.php' />";
 
 	}
 	else
