@@ -200,7 +200,7 @@ $cashbalance = $totalcashdeposit - $totalcashwithdraw
 </select></td>
 
 
-<td ><button style="margin-left:20px" type="submit"  class="btn btn-successful">
+<td ><button style="margin-left:20px" type="submit"  class="btn btn-success">
                                     <i class="fa fa-btn fa-search"></i>Search</td>
 
 </tr>
@@ -237,7 +237,7 @@ else
 
 
 
-                    <div class="panel-body">
+                    <div class="panel-body" >
                         <table class="table table-striped task-table" style="font-family: 'Droid Arabic Naskh', 'Monda', sans-serif;">
                             <thead>
                                 <th> Date</th>
@@ -251,7 +251,7 @@ else
 				
 
                             </thead>
-                            <tbody>
+                            <tbody >
 
 
 <?php

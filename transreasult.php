@@ -8,7 +8,7 @@
 
     function Popup(data) 
     {
-        var mywindow = window.open('', 'my div', 'height=600,width=700');
+        var mywindow = window.open('', '', 'height=600,width=700');
         mywindow.document.write('<html><head><link href="http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css" rel="stylesheet" type="text/css" /><title></title><link rel="stylesheet"  href="./css/bootstrap.min.css" type="text/css">');
 mywindow.document.write('<body style="font-family: Droid Arabic Naskh;"');
 
@@ -35,7 +35,7 @@ mywindow.document.write('<body style="font-family: Droid Arabic Naskh;"');
        <tr>
 <th>Result</th>
 <th>
- <button onclick="PrintElem('#invoice')" type="submit" class="btn btn-default">
+ <button onclick="PrintElem('#result')" type="submit" class="btn btn-default">
 
                                                     <i class="fa fa-btn fa-print"></i>Print
                                                 </button>
@@ -46,7 +46,7 @@ mywindow.document.write('<body style="font-family: Droid Arabic Naskh;"');
 		</table>
                     </div>
 
-                    <div class="panel-body" id="invoice" style="font-family: 'Droid Arabic Naskh', 'Monda', sans-serif;">
+                    <div class="panel-body" id="result" style="font-family: 'Droid Arabic Naskh', 'Monda', sans-serif;">
                   
 
 
@@ -77,9 +77,9 @@ else
 ?>
 
  <div class="panel-body" >
-                        <table  class="table table-striped task-table"  style="font-family: 'Droid Arabic Naskh', 'Monda', sans-serif;">
+                        <table  class="table table-striped task-table"  width="100%" style="font-family: 'Droid Arabic Naskh', 'Monda', sans-serif;">
                             <thead>
-                                <th> Date</th>
+                                <th>Date</th>
                                 <th>Amount</th>
 				<th>Type</th>
 				<th>Method</th>
