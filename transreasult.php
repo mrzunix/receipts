@@ -9,10 +9,10 @@
     function Popup(data) 
     {
         var mywindow = window.open('', '', 'height=600,width=700');
-        mywindow.document.write('<html><head><link href="http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css" rel="stylesheet" type="text/css" /><title></title><link rel="stylesheet"  href="./css/bootstrap.min.css" type="text/css">');
-mywindow.document.write('<body style="font-family: Droid Arabic Naskh;"');
+        mywindow.document.write('<html><head><link href="http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css" rel="stylesheet" type="text/css" /><title></title><link rel="stylesheet"  href="./css/bootstrap.min.css" type="text/css"><style>.table {border:1px}</style>');
 
-        mywindow.document.write('</head><body><center>');
+
+        mywindow.document.write('</head><body style="font-family: Droid Arabic Naskh;"><center>');
         mywindow.document.write(data);
         mywindow.document.write('</center></body></html>');
         mywindow.print();

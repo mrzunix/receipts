@@ -100,6 +100,7 @@ $userRow=mysql_fetch_array($res);
                         <ul class="dropdown-menu" role="menu">
                                 <li><a href="./adddeposit.php"><i class="fa fa-btn fa-money"></i>Deposit</a></li>
                                 <li><a href="./withdraw.php"><i class="fa fa-btn fa-money"></i>Withdraw</a></li>
+                                <li><a href="./payment.php"><i class="fa fa-btn fa-money"></i>Payment</a></li>
                                 <li><a href="./translist.php"><i class="fa fa-btn fa-history"></i> History</a></li>
 
                             </ul>

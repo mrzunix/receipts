@@ -71,9 +71,32 @@ $totalbankwithdraw = mysql_real_escape_string($row['totalbankwithdraw']) ;
 }
 
 
-$totalbalance = $totaldeposit - $totalwithdraw;
-$bankbalance = $totalbankdeposit - $totalbankwithdraw ;
-$cashbalance = $totalcashdeposit - $totalcashwithdraw
+$result = mysql_query("SELECT sum(amount) as totalpayment FROM transactions where type = 'Payment'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totalpayment = mysql_real_escape_string($row['totalpayment']);
+}
+
+
+$result = mysql_query("SELECT sum(amount) as totalcashpayment FROM transactions where type = 'Payment' AND method='Cash'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totalcashpayment = mysql_real_escape_string($row['totalcashpayment']);
+}
+
+$result = mysql_query("SELECT sum(amount) as totalbankpayment FROM transactions where type = 'Payment' AND method='Bank'", $db);
+while($row = mysql_fetch_array($result))
+  {
+$totalbankpayment = mysql_real_escape_string($row['totalbankpayment']) ;
+}
+
+$totalout =$totalwithdraw + $totalpayment ;
+$totalbankout = $totalbankwithdraw + $totalbankpayment;
+$totalcashout = $totalcashpayment + $totalcashpayment;
+
+$totalbalance = $totaldeposit - $totalout;
+$bankbalance = $totalbankdeposit - $totalbankout ;
+$cashbalance = $totalcashdeposit - $totalcashout;
 
 ?>
 <!------------------>
@@ -87,7 +110,7 @@ $cashbalance = $totalcashdeposit - $totalcashwithdraw
 <?php echo   " $totaldeposit &nbsp; L.E" ; ?>
 </p>
 <hr>
-<table align="center"  width="250px">
+<table align="center"  width="200px">
 <tr>
 <td>
 <p>Bank Deposit</p>
@@ -114,7 +137,7 @@ $cashbalance = $totalcashdeposit - $totalcashwithdraw
 <?php echo   " $totalbalance &nbsp; L.E" ; ?>
 </p>
 <hr>
-<table align="center"  width="300px">
+<table align="center"  width="200px">
 <tr>
 <td>
 <p>Bank Balance</p>
@@ -146,7 +169,7 @@ $cashbalance = $totalcashdeposit - $totalcashwithdraw
 <?php echo   " $totalwithdraw &nbsp; L.E" ; ?>
 </p>
 <hr>
-<table align="center"  width="250px">
+<table align="center"  width="200px">
 <tr>
 <td>
 <p>Bank Withdraw</p>
@@ -157,6 +180,31 @@ $cashbalance = $totalcashdeposit - $totalcashwithdraw
 <p>Cash Withdraw</p>
 <p style="font-weight:bold;font-size:16px">
 <?php echo   " $totalcashwithdraw &nbsp; L.E" ; ?>
+</td>
+</tr>
+</table>
+
+</div>
+</td>
+
+<td>
+<div class="btn btn-default ">
+<p>Total Payments Transactions</p>
+<p style="font-weight:bold;font-size:18px">
+<?php echo   " $totalpayment &nbsp; L.E" ; ?>
+</p>
+<hr>
+<table align="center"  width="200px">
+<tr>
+<td>
+<p>Bank Payment</p>
+<p style="font-weight:bold;font-size:16px">
+<?php echo   " $totalbankpayment &nbsp; L.E" ; ?>
+</td>
+<td>
+<p>Cash Payment</p>
+<p style="font-weight:bold;font-size:16px">
+<?php echo   " $totalcashpayment &nbsp; L.E" ; ?>
 </td>
 </tr>
 </table>
@@ -189,6 +237,7 @@ $cashbalance = $totalcashdeposit - $totalcashwithdraw
 <OPTION  VALUE="">All</OPTION>
 <OPTION  VALUE="Deposit">Deposit</OPTION>
 <OPTION  VALUE="Withdraw">Withdraw</OPTION>
+<OPTION  VALUE="Payment">Payment</OPTION>
 </select>
  </td>
 
