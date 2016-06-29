@@ -92,7 +92,7 @@ $totalbankpayment = mysql_real_escape_string($row['totalbankpayment']) ;
 
 $totalout =$totalwithdraw + $totalpayment ;
 $totalbankout = $totalbankwithdraw + $totalbankpayment;
-$totalcashout = $totalcashpayment + $totalcashpayment;
+$totalcashout = $totalcashwithdraw + $totalcashpayment;
 
 $totalbalance = $totaldeposit - $totalout;
 $bankbalance = $totalbankdeposit - $totalbankout ;
