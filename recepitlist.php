@@ -72,8 +72,13 @@ else
 
 <?php
 require('include/dbi.php');
+$cm = exec('date +%m');
+$cy = exec('date +%Y');
+$cd = exec('date +%d');
+$pm =  $cm - 1;
+$listp = "$cy-$pm-$cd";
 
-$result = mysqli_query($con,"select * from recepits");
+$result = mysqli_query($con,"select * from recepits where date > '$listp' order by id DESC");
 
 while($row = mysqli_fetch_array($result))
   {
