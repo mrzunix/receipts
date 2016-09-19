@@ -30,5 +30,32 @@ $( "#radioset" ).buttonset();
 
   </script>
  
+
+
+  <script>
+  $(function() {
+    $( "#sdate" ).datepicker({ dateFormat: "yy-mm-dd" });
+
+
+  });
+
+$( "#button" ).button();
+$( "#radioset" ).buttonset();
+
+
+  </script>
+
+  <script>
+  $(function() {
+    $( "#edate" ).datepicker({ dateFormat: "yy-mm-dd" });
+
+
+  });
+
+$( "#button" ).button();
+$( "#radioset" ).buttonset();
+
+
+  </script>
 </body>
 </html>

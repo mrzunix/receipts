@@ -1,7 +1,11 @@
 <?php
 
+
  require('include/nav.php');
 include_once './include/db.php';
+$sdate = $_GET['sdate'];
+$edate = $_GET['edate'];
+
 if(isset($_POST['btn-delete']))
 {
 
@@ -14,7 +18,7 @@ if(mysql_query("delete from recepits where id = '$id' "))
 	{
 
   echo "<center><p class='fa fa-btn fa-info-circle' style='color:Green'> Receipt Has Been Deleted Successfully  </center>";
-	echo "<meta http-equiv='refresh' content='0; URL=./recepitlist.php' />";
+	echo "<meta http-equiv='refresh' content='0; URL=./recepitget.php?sdate=$sdate&edate=$edate' />";
 	}
 	else
 	{
@@ -41,7 +45,7 @@ if(mysql_query("delete from recepits where id = '$id' "))
                             <label class="col-md-3 control-label " >Start Date </label>
 
                             <div class="col-md-6" >
-                           <input  type="text" name="sdate" class="form-control" id="sdate" required>
+                           <input  type="text" name="sdate" class="form-control" id="datepicker" required>
 
 
                             </div>
@@ -52,7 +56,7 @@ if(mysql_query("delete from recepits where id = '$id' "))
                             <label class="col-md-3 control-label " >End Date </label>
 
                             <div class="col-md-6" >
-                           <input  type="text" name="edate" class="form-control" id="edate" required>
+                           <input  type="text" name="edate" class="form-control" id="datepicker1" required>
 
 
                             </div>
@@ -80,7 +84,8 @@ if(mysql_query("delete from recepits where id = '$id' "))
 
 <?php
 include_once './include/db.php';
-$result = mysql_query("SELECT * FROM recepits", $db);
+
+$result = mysql_query("SELECT * FROM recepits where date >= '$sdate' AND date <= '$edate'  order by date  DESC ", $db);
 $num_rows = mysql_num_rows($result);
 
 
@@ -113,13 +118,9 @@ else
 
 <?php
 require('include/dbi.php');
-$cm = exec('date +%m');
-$cy = exec('date +%Y');
-$cd = exec('date +%d');
-$pm =  $cm - 1;
-$listp = "$cy-$pm-$cd";
 
-$result = mysqli_query($con,"select * from recepits where date > '$listp' order by id DESC");
+
+$result = mysqli_query($con,"select * from recepits where date >= '$sdate' AND date <= '$edate'  order by date  DESC");
 while($row = mysqli_fetch_array($result))
   {
 
